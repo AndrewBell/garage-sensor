@@ -1,8 +1,9 @@
+#!/usr/bin/env groovy
+
 node {
-   def mvnHome
    stage('Preperation') { // for display purposes
       // Get some code from a GitHub repository
-      echo('Heck, I shouldn\'t have to even check out code, but I could')
+      git('https://github.com/AndrewBell/garage-sensor.git')
    }
    stage('Test') {
        echo('I should actually run the tests now.')
