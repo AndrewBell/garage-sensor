@@ -6,6 +6,7 @@ node {
    }
    stage('Test') {
        echo('I should actually run the tests now.')
+       sh('ls -ltra')
        sh('python app.py')
    }
    stage('Build') {
