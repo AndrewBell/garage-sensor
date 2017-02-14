@@ -7,13 +7,6 @@
 
 package com.recursivechaos.garage.door;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class DoorService {
-
-    public Door getDoorStatus(long doorNo){
-        return new Door(doorNo, "GARAGE", "OPEN");
-    }
-
+public interface DoorService {
+    Door getDoorStatus(long doorNo);
 }
