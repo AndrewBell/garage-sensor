@@ -24,23 +24,23 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class DoorControllerTest {
 
-    @InjectMocks
-    DoorController doorController;
-
-    @Mock
-    DoorService doorService;
-
-    @Before
-    public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
-    }
+//    @InjectMocks
+//    DoorController doorController;
+//
+//    @Mock
+    DoorService doorService = new DoorServiceImpl();
+//
+//    @Before
+//    public void setUp() throws Exception {
+//        MockitoAnnotations.initMocks(this);
+//    }
 
     @Test
     public void testGetStatusWhenDoorIsOpen() throws Exception {
         DoorController doorCtrl = new DoorController();
 
         Door mockDoor = new Door(1, "GARAGE", "OPEN");
-        when(doorService.getDoorStatus(1)).thenReturn(mockDoor);
+        //when(doorService.getDoorStatus(1)).thenReturn(mockDoor);
 
         Door foundDoor = doorCtrl.getStatus(1);
         assertEquals("Should return the correct door, and an OPEN status", mockDoor, foundDoor);
